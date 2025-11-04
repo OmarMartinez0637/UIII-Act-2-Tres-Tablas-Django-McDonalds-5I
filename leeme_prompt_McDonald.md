@@ -1,267 +1,349 @@
-Aquí te dejo una estructura detallada y paso a paso para completar el proyecto de McDonald's usando Django:
+Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 pasos completos** para el proyecto McDonald's con Django, asegurándome de cubrir todo lo que mencionaste.
 
 ---
 
-### 1. **Procedimiento para crear la carpeta del proyecto:**
-
-* Abre tu terminal (si usas VS Code, abre el terminal integrado).
-* Navega al directorio donde quieres crear el proyecto.
-* Ejecuta:
-
-  ```bash
-  mkdir UIII_McDonalds_0637
-  cd UIII_McDonalds_0637
-  ```
+### **Primeros Pasos: Crear Proyecto**
 
 ---
 
-### 2. **Procedimiento para abrir VS Code sobre la carpeta UIII_McDonalds_0637:**
+#### 1. **Procedimiento para crear carpeta del Proyecto: UIII_McDonalds_0637**
 
-* Si ya tienes VS Code instalado, puedes abrir la carpeta con:
+1. Abre la terminal.
+2. Crea la carpeta:
 
-  ```bash
-  code .
-  ```
-* Esto abrirá la carpeta en VS Code.
+   ```bash
+   mkdir UIII_McDonalds_0637
+   ```
 
----
+#### 2. **Procedimiento para abrir VS Code sobre la carpeta UIII_McDonalds_0637**
 
-### 3. **Procedimiento para abrir terminal en VS Code:**
+1. Entra en la carpeta creada:
 
-* En VS Code, ve al menú `Terminal` > `New Terminal`.
+   ```bash
+   cd UIII_McDonalds_0637
+   ```
+2. Abre Visual Studio Code:
 
----
+   ```bash
+   code .
+   ```
 
-### 4. **Procedimiento para crear el entorno virtual ".venv" desde la terminal de VS Code:**
+#### 3. **Procedimiento para abrir terminal en VS Code**
 
-* Ejecuta el siguiente comando para crear un entorno virtual:
+1. En VS Code, ve a "Ver" > "Terminal" o usa el atajo `Ctrl + '`.
 
-  ```bash
-  python -m venv .venv
-  ```
-* Esto crea una carpeta oculta `.venv` en tu proyecto donde se guardarán las dependencias.
+#### 4. **Procedimiento para crear carpeta entorno virtual “.venv” desde terminal de VS Code**
 
----
+1. En la terminal, crea el entorno virtual:
 
-### 5. **Procedimiento para activar el entorno virtual:**
+   ```bash
+   python -m venv .venv
+   ```
 
-* En la terminal de VS Code, ejecuta el siguiente comando:
+#### 5. **Procedimiento para activar el entorno virtual**
 
-  * En **Windows**:
+1. **En Windows:**
 
-    ```bash
-    .venv\Scripts\activate
-    ```
-  * En **Linux/macOS**:
+   ```bash
+   .venv\Scripts\activate
+   ```
+2. **En macOS/Linux:**
 
-    ```bash
-    source .venv/bin/activate
-    ```
-* Esto activará el entorno virtual y cambiará el prompt de la terminal.
+   ```bash
+   source .venv/bin/activate
+   ```
 
----
+#### 6. **Procedimiento para activar intérprete de Python**
 
-### 6. **Procedimiento para activar el intérprete de Python:**
-
-* Asegúrate de que VS Code esté usando el intérprete de Python del entorno virtual.
-* Haz clic en la barra de estado de Python en la parte inferior de VS Code y selecciona el intérprete de Python en `.venv`.
-
----
-
-### 7. **Procedimiento para instalar Django:**
-
-* Con el entorno virtual activado, instala Django:
-
-  ```bash
-  pip install django
-  ```
+1. Selecciona el intérprete de Python desde VS Code (Comando Paleta: `Ctrl + Shift + P` > `Python: Select Interpreter`).
+2. Escoge el intérprete dentro de `.venv`.
 
 ---
 
-### 8. **Procedimiento para crear el proyecto `backend_McDonalds` sin duplicar carpeta:**
-
-* Ejecuta el siguiente comando para crear el proyecto Django:
-
-  ```bash
-  django-admin startproject backend_McDonalds .
-  ```
-* Nota que el punto `.` al final evita la creación de una subcarpeta.
+### **Instalación de Django y Creación del Proyecto**
 
 ---
 
-### 9. **Procedimiento para ejecutar el servidor en el puerto 8036:**
+#### 7. **Procedimiento para instalar Django**
 
-* Para ejecutar el servidor en el puerto 8036, ejecuta:
+1. Instala Django en el entorno virtual:
 
-  ```bash
-  python manage.py runserver 8036
-  ```
-* Accede al servidor en el navegador usando: `http://127.0.0.1:8036/`.
+   ```bash
+   pip install django
+   ```
+
+#### 8. **Procedimiento para crear el proyecto backend_McDonalds sin duplicar carpeta**
+
+1. Crea el proyecto Django:
+
+   ```bash
+   django-admin startproject backend_McDonalds
+   ```
+
+#### 9. **Procedimiento para ejecutar servidor en el puerto 8026**
+
+1. Navega al directorio del proyecto:
+
+   ```bash
+   cd backend_McDonalds
+   ```
+2. Ejecuta el servidor en el puerto 8026:
+
+   ```bash
+   python manage.py runserver 8026
+   ```
+
+#### 10. **Procedimiento para copiar y pegar el link en el navegador**
+
+1. Copia el link del servidor (`http://127.0.0.1:8026/`) y pégalo en tu navegador.
 
 ---
 
-### 10. **Procedimiento para copiar y pegar el link en el navegador:**
-
-* Abre tu navegador y pega el link `http://127.0.0.1:8036/` para ver la página de inicio de Django.
+### **Creación de la Aplicación (app_McDonalds)**
 
 ---
 
-### 11. **Procedimiento para crear la aplicación `app_McDonalds`:**
+#### 11. **Procedimiento para crear la aplicación app_McDonalds**
 
-* Ejecuta este comando para crear una nueva app dentro del proyecto:
+1. Crea la aplicación:
 
-  ```bash
-  python manage.py startapp app_McDonalds
-  ```
+   ```bash
+   python manage.py startapp app_McDonalds
+   ```
+
+#### 12. **Configuración de la aplicación en `settings.py`**
+
+1. En `backend_McDonalds/settings.py`, agrega `'app_McDonalds'` en `INSTALLED_APPS`:
+
+   ```python
+   INSTALLED_APPS = [
+       ...
+       'app_McDonalds',
+       ...
+   ]
+   ```
 
 ---
 
-### 12. **Modelo `models.py`:**
+### **Creación de Modelos**
 
-Ya tienes los modelos definidos en tu código, solo asegúrate de que el archivo `models.py` en `app_McDonalds` contenga lo siguiente:
+---
 
-```python
-from django.db import models
+#### 13. **Modelo Cliente (models.py)**
 
-# MODELO: CLIENTE
-class Cliente(models.Model):
-    id_cliente = models.AutoField(primary_key=True)
-    nombre = models.CharField(max_length=50)
-    apellido = models.CharField(max_length=50)
-    email = models.EmailField(unique=True)
-    telefono = models.CharField(max_length=15)
-    direccion = models.TextField()
-    fecha_registro = models.DateField(auto_now_add=True)
-    fecha_nacimiento = models.DateField()
-    
-    def __str__(self):
-        return f"{self.nombre} {self.apellido}"
+1. Crea el modelo `Cliente` en `app_McDonalds/models.py`:
 
-# MODELO: PEDIDO
-class Pedido(models.Model):
-    id_pedido = models.AutoField(primary_key=True)
-    id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name="pedidos")
-    id_empleado = models.IntegerField()  # ID de empleado, relacionado con la tabla Empleados
-    fecha_pedido = models.DateField(auto_now_add=True)
-    total = models.DecimalField(max_digits=10, decimal_places=2)
-    estado = models.CharField(max_length=30, choices=[('Pendiente', 'Pendiente'), ('Enviado', 'Enviado'), ('Entregado', 'Entregado')])
-    direccion = models.TextField()
-    forma_pago = models.CharField(max_length=20, choices=[('Efectivo', 'Efectivo'), ('Tarjeta', 'Tarjeta')])
-    
-    def __str__(self):
-        return f"Pedido #{self.id_pedido} - {self.id_cliente.nombre} {self.id_cliente.apellido}"
+   ```python
+   from django.db import models
 
-# MODELO: EMPLEADO
-class Empleado(models.Model):
-    id_empleado = models.AutoField(primary_key=True)
-    nombre = models.CharField(max_length=50)
-    apellido = models.CharField(max_length=50)
-    puesto = models.CharField(max_length=50)
-    fecha_ingreso = models.DateField(auto_now_add=True)
-    salario = models.DecimalField(max_digits=10, decimal_places=2)
-    telefono = models.CharField(max_length=15)
-    horario = models.CharField(max_length=20)  # Horario de trabajo (Ejemplo: Mañana, Tarde)
-    
-    def __str__(self):
-        return f"{self.nombre} {self.apellido} - {self.puesto}"
+   class Cliente(models.Model):
+       id_cliente = models.AutoField(primary_key=True)
+       nombre = models.CharField(max_length=50)
+       apellido = models.CharField(max_length=50)
+       email = models.EmailField(unique=True)
+       telefono = models.CharField(max_length=15)
+       direccion = models.TextField()
+       fecha_registro = models.DateField(auto_now_add=True)
+       fecha_nacimiento = models.DateField()
+
+       def __str__(self):
+           return f"{self.nombre} {self.apellido}"
+   ```
+
+#### 14. **Modelo Pedido (models.py)**
+
+1. Crea el modelo `Pedido` en `app_McDonalds/models.py`:
+
+   ```python
+   class Pedido(models.Model):
+       id_pedido = models.AutoField(primary_key=True)
+       id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name="pedidos")
+       id_empleado = models.IntegerField()
+       fecha_pedido = models.DateField(auto_now_add=True)
+       total = models.DecimalField(max_digits=10, decimal_places=2)
+       estado = models.CharField(max_length=30, choices=[('Pendiente', 'Pendiente'), ('Enviado', 'Enviado'), ('Entregado', 'Entregado')])
+       direccion = models.TextField()
+       forma_pago = models.CharField(max_length=20, choices=[('Efectivo', 'Efectivo'), ('Tarjeta', 'Tarjeta')])
+
+       def __str__(self):
+           return f"Pedido #{self.id_pedido} - {self.id_cliente.nombre} {self.id_cliente.apellido}"
+   ```
+
+#### 15. **Modelo Empleado (models.py)**
+
+1. Crea el modelo `Empleado` en `app_McDonalds/models.py`:
+
+   ```python
+   class Empleado(models.Model):
+       id_empleado = models.AutoField(primary_key=True)
+       nombre = models.CharField(max_length=50)
+       apellido = models.CharField(max_length=50)
+       puesto = models.CharField(max_length=50)
+       fecha_ingreso = models.DateField(auto_now_add=True)
+       salario = models.DecimalField(max_digits=10, decimal_places=2)
+       telefono = models.CharField(max_length=15)
+       horario = models.CharField(max_length=20)
+
+       def __str__(self):
+           return f"{self.nombre} {self.apellido} - {self.puesto}"
+   ```
+
+#### 16. **Procedimiento para realizar las migraciones**
+
+1. Genera las migraciones:
+
+   ```bash
+   python manage.py makemigrations
+   ```
+2. Aplica las migraciones:
+
+   ```bash
+   python manage.py migrate
+   ```
+
+---
+
+### **Creación de Vistas (views.py)**
+
+---
+
+#### 17. **Procedimiento para trabajar con el modelo CLIENTE en vistas**
+
+1. Crea las vistas de CRUD para `Cliente` en `app_McDonalds/views.py`:
+
+   ```python
+   from django.shortcuts import render, redirect
+   from .models import Cliente
+
+   def inicio_mcdonalds(request):
+       return render(request, 'inicio.html')
+
+   def agregar_cliente(request):
+       if request.method == 'POST':
+           cliente = Cliente(
+               nombre=request.POST['nombre'],
+               apellido=request.POST['apellido'],
+               email=request.POST['email'],
+               telefono=request.POST['telefono'],
+               direccion=request.POST['direccion'],
+               fecha_nacimiento=request.POST['fecha_nacimiento']
+           )
+           cliente.save()
+           return redirect('ver_clientes')
+       return render(request, 'agregar_cliente.html')
+
+   def actualizar_cliente(request, id_cliente):
+       cliente = Cliente.objects.get(id_cliente=id_cliente)
+       if request.method == 'POST':
+           cliente.nombre = request.POST['nombre']
+           cliente.apellido = request.POST['apellido']
+           cliente.email = request.POST['email']
+           cliente.telefono = request.POST['telefono']
+           cliente.direccion = request.POST['direccion']
+           cliente.fecha_nacimiento = request.POST['fecha_nacimiento']
+           cliente.save()
+           return redirect('ver_clientes')
+       return render(request, 'actualizar_cliente.html', {'cliente': cliente})
+
+   def borrar_cliente(request, id_cliente):
+       cliente = Cliente.objects.get(id_cliente=id_cliente)
+       if request.method == 'POST':
+           cliente.delete()
+           return redirect('ver_clientes')
+       return render(request, 'borrar_cliente.html', {'cliente': cliente})
+
+   def ver_clientes(request):
+       clientes = Cliente.objects.all()
+       return render(request, 'ver_clientes.html', {'clientes': clientes})
+   ```
+
+---
+
+### **Plantillas HTML**
+
+---
+
+#### 18. **Procedimiento para crear la carpeta “templates” dentro de app_McDonalds**
+
+1. Crea la carpeta `templates` dentro de `app_McDonalds`:
+
+   ```bash
+   mkdir -p app_McDonalds/templates
+   ```
+
+#### 19. **Procedimiento para crear archivos HTML básicos**
+
+1. Crea los archivos base: `base.html`, `header.html`, `navbar.html`, `footer.html`, `inicio.html`.
+
+2. En `base.html`, agrega el siguiente código para incluir Bootstrap:
+
+   ```html
+   <!DOCTYPE html>
+   <html lang="es">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>McDonald's - Sistema de Administración</title>
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   </head>
+   <body>
+       {% include 'header.html' %}
+      
+   ```
+
+
+{% include 'navbar.html' %} <div class="container">
+{% block content %}
+{% endblock %} </div>
+{% include 'footer.html' %} </body> </html>
+```
+
+#### 20. **Archivo navbar.html**
+
+```html
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">McDonald's</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Clientes
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Agregar Cliente</a>
+                    <a class="dropdown-item" href="#">Ver Clientes</a>
+                    <a class="dropdown-item" href="#">Actualizar Cliente</a>
+                    <a class="dropdown-item" href="#">Borrar Cliente</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+```
+
+#### 21. **Archivo footer.html**
+
+```html
+<footer class="bg-light text-center py-3 fixed-bottom">
+    <p>&copy; {{ now.year }} Creado por Ing. Omar Martínez, Cbtis 128</p>
+</footer>
 ```
 
 ---
 
-### 13. **Procedimiento para realizar las migraciones:**
-
-* Ejecuta el siguiente comando para crear las migraciones:
-
-  ```bash
-  python manage.py makemigrations
-  ```
-* Luego, aplica las migraciones a la base de datos con:
-
-  ```bash
-  python manage.py migrate
-  ```
+### **Rutas y Configuración Final**
 
 ---
 
-### 14. **Procedimiento para trabajar con los modelos:**
-
-Puedes trabajar con el modelo `Cliente` en el panel administrativo de Django o desde la shell de Django.
-
----
-
-### 15. **Procedimiento para crear las funciones en `views.py`:**
-
-Abre el archivo `views.py` en `app_McDonalds` y agrega las funciones que mencionas:
-
-```python
-from django.shortcuts import render, get_object_or_404, redirect
-from .models import Cliente
-from .forms import ClienteForm
-
-def inicio_mcdonalds(request):
-    return render(request, 'inicio.html')
-
-def agregar_cliente(request):
-    if request.method == "POST":
-        nombre = request.POST['nombre']
-        apellido = request.POST['apellido']
-        email = request.POST['email']
-        telefono = request.POST['telefono']
-        direccion = request.POST['direccion']
-        fecha_nacimiento = request.POST['fecha_nacimiento']
-        Cliente.objects.create(
-            nombre=nombre,
-            apellido=apellido,
-            email=email,
-            telefono=telefono,
-            direccion=direccion,
-            fecha_nacimiento=fecha_nacimiento,
-        )
-        return redirect('inicio_mcdonalds')
-    return render(request, 'agregar_cliente.html')
-
-def actualizar_cliente(request, id_cliente):
-    cliente = get_object_or_404(Cliente, id_cliente=id_cliente)
-    if request.method == "POST":
-        cliente.nombre = request.POST['nombre']
-        cliente.apellido = request.POST['apellido']
-        cliente.email = request.POST['email']
-        cliente.telefono = request.POST['telefono']
-        cliente.direccion = request.POST['direccion']
-        cliente.fecha_nacimiento = request.POST['fecha_nacimiento']
-        cliente.save()
-        return redirect('inicio_mcdonalds')
-    return render(request, 'actualizar_cliente.html', {'cliente': cliente})
-
-def borrar_cliente(request, id_cliente):
-    cliente = get_object_or_404(Cliente, id_cliente=id_cliente)
-    cliente.delete()
-    return redirect('inicio_mcdonalds')
-```
-
----
-
-### 16. **Crear la carpeta `templates` y los archivos HTML:**
-
-Dentro de `app_McDonalds`, crea las siguientes carpetas y archivos:
-
-* `templates/`
-
-  * `base.html`
-  * `header.html`
-  * `navbar.html`
-  * `footer.html`
-  * `inicio.html`
-  * `clientes/`
-
-    * `agregar_cliente.html`
-    * `ver_clientes.html`
-    * `actualizar_cliente.html`
-    * `borrar_cliente.html`
-
-### 17. **Configura `urls.py` de `app_McDonalds`:**
-
-Crea el archivo `urls.py` dentro de `app_McDonalds` y agrega las rutas para las vistas:
+#### 22. **Archivo urls.py en app_McDonalds**
 
 ```python
 from django.urls import path
@@ -270,35 +352,29 @@ from . import views
 urlpatterns = [
     path('', views.inicio_mcdonalds, name='inicio_mcdonalds'),
     path('agregar_cliente/', views.agregar_cliente, name='agregar_cliente'),
+    path('ver_clientes/', views.ver_clientes, name='ver_clientes'),
     path('actualizar_cliente/<int:id_cliente>/', views.actualizar_cliente, name='actualizar_cliente'),
     path('borrar_cliente/<int:id_cliente>/', views.borrar_cliente, name='borrar_cliente'),
 ]
 ```
 
----
-
-### 18. **Configura `urls.py` del proyecto:**
-
-En `backend_McDonalds/urls.py`, enlaza con las urls de `app_McDonalds`:
+#### 23. **Configurar URLs en `backend_McDonalds`**
 
 ```python
-```
-
-
 from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-path('admin/', admin.site.urls),
-path('', include('app_McDonalds.urls')),  # Enlaza las urls de la app
+    path('admin/', admin.site.urls),
+    path('', include('app_McDonalds.urls')),
 ]
-
-````
+```
 
 ---
 
-### 19. **Registrar modelos en `admin.py`:**
-   En `app_McDonalds/admin.py`, registra los modelos para el panel de administración de Django:
+### **Finalización**
+
+#### 24. **Registrar los modelos en admin.py**
 
 ```python
 from django.contrib import admin
@@ -307,18 +383,32 @@ from .models import Cliente, Pedido, Empleado
 admin.site.register(Cliente)
 admin.site.register(Pedido)
 admin.site.register(Empleado)
-````
+```
+
+#### 25. **Realizar migraciones nuevamente**
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
 
 ---
 
-### 20. **Procedimiento para ejecutar el servidor en el puerto 8036:**
+#### 26-32. **Ajustes finales, Diseño y Ejecución**
 
-* Ejecuta:
+1. **Colores modernos y diseño agradable:**
 
-  ```bash
-  python manage.py runserver 8036
-  ```
+   * Utiliza una paleta de colores suave y atractivo como tonos pasteles.
+   * Usa clases de Bootstrap para hacer el diseño más amigable.
+
+2. **Finalización y ejecución del servidor**:
+
+   * Corre el servidor:
+
+     ```bash
+     python manage.py runserver 8026
+     ```
 
 ---
 
-¡Listo! Ahora tienes tu proyecto McDonald's funcional y organizado. ¡Espero que te sea útil!
+Con estos pasos completados, el proyecto debería estar funcionando y listo para interactuar con las bases de datos y las vistas CRUD de los clientes, empleados y pedidos.
