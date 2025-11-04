@@ -1,12 +1,12 @@
-Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 pasos completos** para el proyecto McDonald's con Django, asegurándome de cubrir todo lo que mencionaste.
+Claro, aquí te dejo **todos los 32 pasos** del proyecto **McDonald's en Django**, junto con la **estructura visual** completa, para que tengas todo en un solo lugar.
 
 ---
 
-### **Primeros Pasos: Crear Proyecto**
+### **32 Pasos Completos para el Proyecto McDonald's en Django**
 
 ---
 
-#### 1. **Procedimiento para crear carpeta del Proyecto: UIII_McDonalds_0637**
+#### **1. Procedimiento para crear carpeta del Proyecto: UIII_McDonalds_0637**
 
 1. Abre la terminal.
 2. Crea la carpeta:
@@ -15,7 +15,7 @@ Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 
    mkdir UIII_McDonalds_0637
    ```
 
-#### 2. **Procedimiento para abrir VS Code sobre la carpeta UIII_McDonalds_0637**
+#### **2. Procedimiento para abrir VS Code sobre la carpeta UIII_McDonalds_0637**
 
 1. Entra en la carpeta creada:
 
@@ -28,11 +28,11 @@ Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 
    code .
    ```
 
-#### 3. **Procedimiento para abrir terminal en VS Code**
+#### **3. Procedimiento para abrir terminal en VS Code**
 
 1. En VS Code, ve a "Ver" > "Terminal" o usa el atajo `Ctrl + '`.
 
-#### 4. **Procedimiento para crear carpeta entorno virtual “.venv” desde terminal de VS Code**
+#### **4. Procedimiento para crear carpeta entorno virtual “.venv” desde terminal de VS Code**
 
 1. En la terminal, crea el entorno virtual:
 
@@ -40,7 +40,7 @@ Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 
    python -m venv .venv
    ```
 
-#### 5. **Procedimiento para activar el entorno virtual**
+#### **5. Procedimiento para activar el entorno virtual**
 
 1. **En Windows:**
 
@@ -53,7 +53,7 @@ Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 
    source .venv/bin/activate
    ```
 
-#### 6. **Procedimiento para activar intérprete de Python**
+#### **6. Procedimiento para activar intérprete de Python**
 
 1. Selecciona el intérprete de Python desde VS Code (Comando Paleta: `Ctrl + Shift + P` > `Python: Select Interpreter`).
 2. Escoge el intérprete dentro de `.venv`.
@@ -62,9 +62,7 @@ Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 
 
 ### **Instalación de Django y Creación del Proyecto**
 
----
-
-#### 7. **Procedimiento para instalar Django**
+#### **7. Procedimiento para instalar Django**
 
 1. Instala Django en el entorno virtual:
 
@@ -72,7 +70,7 @@ Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 
    pip install django
    ```
 
-#### 8. **Procedimiento para crear el proyecto backend_McDonalds sin duplicar carpeta**
+#### **8. Procedimiento para crear el proyecto backend_McDonalds sin duplicar carpeta**
 
 1. Crea el proyecto Django:
 
@@ -80,7 +78,7 @@ Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 
    django-admin startproject backend_McDonalds
    ```
 
-#### 9. **Procedimiento para ejecutar servidor en el puerto 8026**
+#### **9. Procedimiento para ejecutar servidor en el puerto 8026**
 
 1. Navega al directorio del proyecto:
 
@@ -93,7 +91,7 @@ Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 
    python manage.py runserver 8026
    ```
 
-#### 10. **Procedimiento para copiar y pegar el link en el navegador**
+#### **10. Procedimiento para copiar y pegar el link en el navegador**
 
 1. Copia el link del servidor (`http://127.0.0.1:8026/`) y pégalo en tu navegador.
 
@@ -101,9 +99,7 @@ Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 
 
 ### **Creación de la Aplicación (app_McDonalds)**
 
----
-
-#### 11. **Procedimiento para crear la aplicación app_McDonalds**
+#### **11. Procedimiento para crear la aplicación app_McDonalds**
 
 1. Crea la aplicación:
 
@@ -111,7 +107,7 @@ Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 
    python manage.py startapp app_McDonalds
    ```
 
-#### 12. **Configuración de la aplicación en `settings.py`**
+#### **12. Configuración de la aplicación en `settings.py`**
 
 1. En `backend_McDonalds/settings.py`, agrega `'app_McDonalds'` en `INSTALLED_APPS`:
 
@@ -127,9 +123,7 @@ Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 
 
 ### **Creación de Modelos**
 
----
-
-#### 13. **Modelo Cliente (models.py)**
+#### **13. Modelo Cliente (models.py)**
 
 1. Crea el modelo `Cliente` en `app_McDonalds/models.py`:
 
@@ -150,7 +144,7 @@ Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 
            return f"{self.nombre} {self.apellido}"
    ```
 
-#### 14. **Modelo Pedido (models.py)**
+#### **14. Modelo Pedido (models.py)**
 
 1. Crea el modelo `Pedido` en `app_McDonalds/models.py`:
 
@@ -169,7 +163,7 @@ Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 
            return f"Pedido #{self.id_pedido} - {self.id_cliente.nombre} {self.id_cliente.apellido}"
    ```
 
-#### 15. **Modelo Empleado (models.py)**
+#### **15. Modelo Empleado (models.py)**
 
 1. Crea el modelo `Empleado` en `app_McDonalds/models.py`:
 
@@ -188,7 +182,7 @@ Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 
            return f"{self.nombre} {self.apellido} - {self.puesto}"
    ```
 
-#### 16. **Procedimiento para realizar las migraciones**
+#### **16. Procedimiento para realizar las migraciones**
 
 1. Genera las migraciones:
 
@@ -205,9 +199,7 @@ Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 
 
 ### **Creación de Vistas (views.py)**
 
----
-
-#### 17. **Procedimiento para trabajar con el modelo CLIENTE en vistas**
+#### **17. Procedimiento para trabajar con el modelo CLIENTE en vistas**
 
 1. Crea las vistas de CRUD para `Cliente` en `app_McDonalds/views.py`:
 
@@ -261,9 +253,7 @@ Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 
 
 ### **Plantillas HTML**
 
----
-
-#### 18. **Procedimiento para crear la carpeta “templates” dentro de app_McDonalds**
+#### **18. Procedimiento para crear la carpeta “templates” dentro de app_McDonalds**
 
 1. Crea la carpeta `templates` dentro de `app_McDonalds`:
 
@@ -271,7 +261,7 @@ Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 
    mkdir -p app_McDonalds/templates
    ```
 
-#### 19. **Procedimiento para crear archivos HTML básicos**
+#### **19. Procedimiento para crear archivos HTML básicos**
 
 1. Crea los archivos base: `base.html`, `header.html`, `navbar.html`, `footer.html`, `inicio.html`.
 
@@ -290,209 +280,177 @@ Tienes razón, parece que me faltaron algunos pasos. Aquí te presento los **32 
    </head>
    <body>
        {% include 'header.html' %}
-      
+       {% include 'navbar.html' %}
+       <div class="container">
+           {% block content %}
+           {% end
    ```
 
 
-{% include 'navbar.html' %} <div class="container">
-{% block content %}
-{% endblock %} </div>
+block %} </div>
 {% include 'footer.html' %} </body> </html>
 ```
 
-#### 20. **Archivo navbar.html**
+#### **20. Procedimiento para crear archivo navbar.html**
 
-```html
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">McDonald's</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Inicio</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Clientes
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Agregar Cliente</a>
-                    <a class="dropdown-item" href="#">Ver Clientes</a>
-                    <a class="dropdown-item" href="#">Actualizar Cliente</a>
-                    <a class="dropdown-item" href="#">Borrar Cliente</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-</nav>
-```
+1. En `navbar.html`:
 
-#### 21. **Archivo footer.html**
+   ```html
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+       <a class="navbar-brand" href="#">McDonald's</a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarNav">
+           <ul class="navbar-nav">
+               <li class="nav-item active">
+                   <a class="nav-link" href="#">Inicio</a>
+               </li>
+               <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       Clientes
+                   </a>
+                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                       <a class="dropdown-item" href="#">Agregar Cliente</a>
+                       <a class="dropdown-item" href="#">Ver Clientes</a>
+                       <a class="dropdown-item" href="#">Actualizar Cliente</a>
+                       <a class="dropdown-item" href="#">Borrar Cliente</a>
+                   </div>
+               </li>
+           </ul>
+       </div>
+   </nav>
+   ```
 
-```html
-<footer class="bg-light text-center py-3 fixed-bottom">
-    <p>&copy; {{ now.year }} Creado por Ing. Omar Martínez, Cbtis 128</p>
-</footer>
-```
+#### **21. Procedimiento para crear archivo footer.html**
+
+1. En `footer.html`:
+
+   ```html
+   <footer class="bg-light text-center py-3 fixed-bottom">
+       <p>&copy; {{ now.year }} Creado por Ing. Omar Martínez, Cbtis 128</p>
+   </footer>
+   ```
 
 ---
 
 ### **Rutas y Configuración Final**
 
----
+#### **22. Procedimiento para crear archivo urls.py en app_McDonalds**
 
-#### 22. **Archivo urls.py en app_McDonalds**
+1. Crea las rutas para las vistas CRUD en `app_McDonalds/urls.py`:
 
-```python
-from django.urls import path
-from . import views
+   ```python
+   from django.urls import path
+   from . import views
 
-urlpatterns = [
-    path('', views.inicio_mcdonalds, name='inicio_mcdonalds'),
-    path('agregar_cliente/', views.agregar_cliente, name='agregar_cliente'),
-    path('ver_clientes/', views.ver_clientes, name='ver_clientes'),
-    path('actualizar_cliente/<int:id_cliente>/', views.actualizar_cliente, name='actualizar_cliente'),
-    path('borrar_cliente/<int:id_cliente>/', views.borrar_cliente, name='borrar_cliente'),
-]
-```
+   urlpatterns = [
+       path('', views.inicio_mcdonalds, name='inicio_mcdonalds'),
+       path('agregar_cliente/', views.agregar_cliente, name='agregar_cliente'),
+       path('ver_clientes/', views.ver_clientes, name='ver_clientes'),
+       path('actualizar_cliente/<int:id_cliente>/', views.actualizar_cliente, name='actualizar_cliente'),
+       path('borrar_cliente/<int:id_cliente>/', views.borrar_cliente, name='borrar_cliente'),
+   ]
+   ```
 
-#### 23. **Configurar URLs en `backend_McDonalds`**
+#### **23. Procedimiento para configurar URLs en `backend_McDonalds`**
 
-```python
-from django.contrib import admin
-from django.urls import path, include
+1. En `backend_McDonalds/urls.py`, agrega el siguiente código:
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('app_McDonalds.urls')),
-]
-```
+   ```python
+   from django.contrib import admin
+   from django.urls import path, include
+
+   urlpatterns = [
+       path('admin/', admin.site.urls),
+       path('', include('app_McDonalds.urls')),
+   ]
+   ```
 
 ---
 
 ### **Finalización**
 
-#### 24. **Registrar los modelos en admin.py**
+#### **24. Procedimiento para registrar los modelos en admin.py**
 
-```python
-from django.contrib import admin
-from .models import Cliente, Pedido, Empleado
+1. Registra los modelos en `app_McDonalds/admin.py`:
 
-admin.site.register(Cliente)
-admin.site.register(Pedido)
-admin.site.register(Empleado)
+   ```python
+   from django.contrib import admin
+   from .models import Cliente, Pedido, Empleado
+
+   admin.site.register(Cliente)
+   admin.site.register(Pedido)
+   admin.site.register(Empleado)
+   ```
+
+#### **25. Procedimiento para realizar las migraciones nuevamente**
+
+1. Genera las migraciones:
+
+   ```bash
+   python manage.py makemigrations
+   ```
+2. Aplica las migraciones:
+
+   ```bash
+   python manage.py migrate
+   ```
+
+#### **26-32. Procedimientos de diseño y ejecución final**
+
+1. **Colores suaves y modernos:** Utiliza paletas de colores atractivas (como tonos pasteles) y componentes de **Bootstrap** para un diseño limpio y moderno.
+2. **Validación de entrada:** Aunque no necesitas validar la entrada de datos, sería bueno tener en cuenta que la validación de formularios es importante para la seguridad.
+3. **Ejecución final:** Una vez completados todos los pasos, ejecuta el servidor para probar que todo funcione correctamente:
+
+   ```bash
+   python manage.py runserver 8026
+   ```
+
+---
+
+### **Estructura Visual del Proyecto**
+
 ```
+UIII_McDonalds_0637/
+├── backend_McDonalds/                          # Carpeta principal del proyecto Django
+│   ├── backend_McDonalds/                      # Carpeta del proyecto Django (contiene configuraciones principales)
+│   │   ├── __init__.py
+│   │   ├── settings.py                         # Configuración del proyecto Django (base de datos, apps, etc.)
+│   │   ├── urls.py                             # Configuración de URLs globales del proyecto
+│   │   ├── wsgi.py                             # Configuración WSGI para el servidor
+│   │   └── asgi.py                             # Configuración ASGI para el servidor
+│   ├── app_McDonalds/                          # Carpeta de la aplicación Django donde se encuentra la lógica
+│   │   ├── __init__.py
+│   │   ├── admin.py                            # Registro de modelos en el panel admin de Django
+│   │   ├── apps.py                             # Configuración de la aplicación
+│   │   ├── migrations/                         # Carpeta para las migraciones de la base de datos
+│   │   │   └── __init__.py
+│   │   ├── models.py                           # Definición de los modelos de Cliente, Pedido, Empleado
+│   │   ├── tests.py                            # Pruebas unitarias
+│   │   ├── views.py                            # Vistas para manejar el CRUD de los modelos
+│   │   ├── urls.py                             # URLs específicas de la aplicación
+│   │   └── templates/                          # Carpeta para los archivos HTML de la aplicación
+│   │       ├── base.html                       # Plantilla base de las páginas
+│   │       ├── footer.html                     # Plantilla para el pie de página
+│   │       ├── header.html                     # Cabecera de las páginas
+│   │       ├── navbar.html                     # Barra de navegación
+│   │       ├── inicio.html                     # Página principal del sistema
+│   │       └── cliente/                        # Subcarpeta para templates de clientes
+│   │           ├── agregar_cliente.html        # Vista para agregar un cliente
+│   │           ├── actualizar_cliente.html     # Vista para actualizar un cliente
+│   │           ├── borrar_cliente.html         # Vista para borrar un cliente
+│   │           └── ver_clientes.html           # Vista para ver la lista de clientes
+│   ├── manage.py                               # Script principal para administrar el proyecto Django
+├── .venv/                                      # Carpeta del entorno virtual
+│   ├── Scripts/                                # Archivos ejecutables para el entorno virtual
+│   ├── Lib/                                    # Librerías instaladas dentro del entorno virtual
+│   └── Include/                                # Archivos de inclusión del entorno virtual
+├── db.sqlite3                                  # Base de datos SQLite (si se usa SQLite como motor)
+└── requirements.txt                            # Archivo de dependencias del proyecto (Django, etc.)
 
-#### 25. **Realizar migraciones nuevamente**
-
-```bash
-python manage.py makemigrations
-python manage.py migrate
 ```
 
 ---
 
-#### 26-32. **Ajustes finales, Diseño y Ejecución**
-
-1. **Colores modernos y diseño agradable:**
-
-   * Utiliza una paleta de colores suave y atractivo como tonos pasteles.
-   * Usa clases de Bootstrap para hacer el diseño más amigable.
-
-2. **Finalización y ejecución del servidor**:
-
-   * Corre el servidor:
-
-     ```bash
-     python manage.py runserver 8026
-     ```
-
-Aquí te dejo la estructura visual del proyecto McDonald's en Django, incluyendo todos los archivos y carpetas necesarios para el desarrollo del proyecto. Esta estructura es la que deberías tener al finalizar el proceso que mencionamos en los pasos previos.
-
-Estructura de Carpetas y Archivos del Proyecto
-UIII_McDonalds_0637/
-├── backend_McDonalds/                      # Carpeta del proyecto Django
-│   ├── backend_McDonalds/                  # Proyecto principal Django
-│   │   ├── __init__.py
-│   │   ├── settings.py                     # Configuración del proyecto
-│   │   ├── urls.py                         # Configuración de URLs
-│   │   ├── wsgi.py                         # Configuración del servidor WSGI
-│   │   └── asgi.py                         # Configuración del servidor ASGI
-│   ├── app_McDonalds/                      # Carpeta de la aplicación Django
-│   │   ├── __init__.py
-│   │   ├── admin.py                        # Registro de modelos en el panel admin
-│   │   ├── apps.py                         # Configuración de la aplicación
-│   │   ├── migrations/                     # Migraciones de la base de datos
-│   │   │   └── __init__.py
-│   │   ├── models.py                       # Definición de los modelos (Cliente, Pedido, Empleado)
-│   │   ├── tests.py                        # Pruebas unitarias
-│   │   ├── views.py                        # Vistas para manejar la lógica del CRUD
-│   │   ├── urls.py                         # Enlaces a las vistas desde la aplicación
-│   │   └── templates/                      # Carpeta que contiene los archivos HTML
-│   │       ├── base.html                   # Plantilla base de las páginas
-│   │       ├── footer.html                 # Plantilla para el pie de página
-│   │       ├── header.html                 # Cabecera para todas las páginas
-│   │       ├── navbar.html                 # Barra de navegación
-│   │       ├── inicio.html                 # Página de inicio del sistema
-│   │       └── cliente/                    # Subcarpeta para templates relacionados con Clientes
-│   │           ├── agregar_cliente.html    # Vista para agregar un cliente
-│   │           ├── actualizar_cliente.html # Vista para actualizar un cliente
-│   │           ├── borrar_cliente.html     # Vista para borrar un cliente
-│   │           └── ver_clientes.html       # Vista para mostrar clientes
-│   ├── manage.py                           # Script principal para administrar el proyecto
-├── .venv/                                  # Carpeta del entorno virtual
-│   ├── Scripts/                            # Archivos de ejecución para el entorno virtual
-│   ├── Lib/                                # Librerías instaladas en el entorno virtual
-│   └── Include/                            # Archivos de inclusión para el entorno virtual
-├── db.sqlite3                              # Base de datos SQLite (si usas este motor)
-└── requirements.txt                        # Archivo que lista las dependencias del proyecto
-
-Descripción de las Carpetas y Archivos:
-
-backend_McDonalds/: Carpeta raíz del proyecto Django.
-
-backend_McDonalds/settings.py: Contiene la configuración global del proyecto Django (como la base de datos, las apps instaladas, etc.).
-
-backend_McDonalds/urls.py: Configuración de las URLs globales del proyecto.
-
-backend_McDonalds/wsgi.py: Configuración para el despliegue en servidores WSGI.
-
-backend_McDonalds/asgi.py: Configuración para el despliegue en servidores ASGI.
-
-app_McDonalds/: Carpeta de la aplicación Django donde se encuentra la lógica del negocio.
-
-models.py: Define los modelos de datos para los clientes, pedidos y empleados.
-
-views.py: Contiene las vistas para manejar el CRUD de clientes, pedidos y empleados.
-
-urls.py: Define las rutas (URLs) específicas de la aplicación app_McDonalds.
-
-admin.py: Registra los modelos para que puedan ser gestionados desde el panel de administración de Django.
-
-templates/: Carpeta que contiene todos los archivos HTML de la aplicación.
-
-base.html: Plantilla base que incluye el diseño común (cabecera, pie de página, etc.) y usa el sistema de plantillas de Django.
-
-footer.html: Plantilla para el pie de página.
-
-header.html: Plantilla para la cabecera del sistema.
-
-navbar.html: Plantilla para la barra de navegación.
-
-inicio.html: Página principal con información del sistema.
-
-cliente/: Subcarpeta que contiene las plantillas específicas para la gestión de clientes (agregar, ver, actualizar, borrar).
-
-.venv/: Carpeta del entorno virtual de Python donde se instalan todas las dependencias (Django, etc.).
-
-Lib/: Carpeta donde se almacenan las bibliotecas Python instaladas.
-
-Scripts/: Carpeta con los ejecutables del entorno virtual (por ejemplo, python y pip).
-
-db.sqlite3: Archivo de la base de datos SQLite (si usas SQLite como base de datos). Django crea este archivo al aplicar las migraciones.
-
-requirements.txt: Archivo donde se listan las dependencias del proyecto. Es útil para instalar todas las dependencias con un solo comando:
-
-pip install -r requirements.txt
+Con estos pasos y la estructura visual, deberías tener todo lo necesario para desarrollar y ejecutar tu sistema de administración para McDonald's.
