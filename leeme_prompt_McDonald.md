@@ -409,10 +409,9 @@ python manage.py migrate
      python manage.py runserver 8026
      ```
 
----
+Aquí te dejo la estructura visual del proyecto McDonald's en Django, incluyendo todos los archivos y carpetas necesarios para el desarrollo del proyecto. Esta estructura es la que deberías tener al finalizar el proceso que mencionamos en los pasos previos.
 
-Con estos pasos completados, el proyecto debería estar funcionando y listo para interactuar con las bases de datos y las vistas CRUD de los clientes, empleados y pedidos.
-
+Estructura de Carpetas y Archivos del Proyecto
 UIII_McDonalds_0637/
 ├── backend_McDonalds/                      # Carpeta del proyecto Django
 │   ├── backend_McDonalds/                  # Proyecto principal Django
@@ -449,3 +448,51 @@ UIII_McDonalds_0637/
 │   └── Include/                            # Archivos de inclusión para el entorno virtual
 ├── db.sqlite3                              # Base de datos SQLite (si usas este motor)
 └── requirements.txt                        # Archivo que lista las dependencias del proyecto
+
+Descripción de las Carpetas y Archivos:
+
+backend_McDonalds/: Carpeta raíz del proyecto Django.
+
+backend_McDonalds/settings.py: Contiene la configuración global del proyecto Django (como la base de datos, las apps instaladas, etc.).
+
+backend_McDonalds/urls.py: Configuración de las URLs globales del proyecto.
+
+backend_McDonalds/wsgi.py: Configuración para el despliegue en servidores WSGI.
+
+backend_McDonalds/asgi.py: Configuración para el despliegue en servidores ASGI.
+
+app_McDonalds/: Carpeta de la aplicación Django donde se encuentra la lógica del negocio.
+
+models.py: Define los modelos de datos para los clientes, pedidos y empleados.
+
+views.py: Contiene las vistas para manejar el CRUD de clientes, pedidos y empleados.
+
+urls.py: Define las rutas (URLs) específicas de la aplicación app_McDonalds.
+
+admin.py: Registra los modelos para que puedan ser gestionados desde el panel de administración de Django.
+
+templates/: Carpeta que contiene todos los archivos HTML de la aplicación.
+
+base.html: Plantilla base que incluye el diseño común (cabecera, pie de página, etc.) y usa el sistema de plantillas de Django.
+
+footer.html: Plantilla para el pie de página.
+
+header.html: Plantilla para la cabecera del sistema.
+
+navbar.html: Plantilla para la barra de navegación.
+
+inicio.html: Página principal con información del sistema.
+
+cliente/: Subcarpeta que contiene las plantillas específicas para la gestión de clientes (agregar, ver, actualizar, borrar).
+
+.venv/: Carpeta del entorno virtual de Python donde se instalan todas las dependencias (Django, etc.).
+
+Lib/: Carpeta donde se almacenan las bibliotecas Python instaladas.
+
+Scripts/: Carpeta con los ejecutables del entorno virtual (por ejemplo, python y pip).
+
+db.sqlite3: Archivo de la base de datos SQLite (si usas SQLite como base de datos). Django crea este archivo al aplicar las migraciones.
+
+requirements.txt: Archivo donde se listan las dependencias del proyecto. Es útil para instalar todas las dependencias con un solo comando:
+
+pip install -r requirements.txt
